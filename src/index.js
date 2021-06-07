@@ -8,33 +8,27 @@ const addToyCard = (toy) => { // Add toy cards to the DOM
   // - h2 tag with the toy.name
   let h2 = document.createElement("h2") // Create empty element
   h2.innerText = toy.name // Set the innerText to the toy.name
-  newToyCard.append(h2) // Append h2 to the card
 
   // - img tag with the src of toy.image
   //   and the className = "toy-avatar"
   let img = document.createElement("img") // Create empty element
   img.src = toy.image // set the src of the img to toy.image
   img.classList.add("toy-avatar") // Add class of "toy-avatar"
-  newToyCard.append(img) // Append img to the card
 
   // - p tag with toy.likes
   let p = document.createElement("p") // Create empty element
   p.innerText = `${toy.likes} likes` // Set text of paragraph to toy.likes
-  newToyCard.append(p) // Append paragraph to the card
 
   // - button tag with a class "like-btn" and
   //   an id attribute set to toy.id
   let btn = document.createElement("button") // Create empty element
   btn.classList.add("like-btn") // Set the class to "like-btn"
   btn.setAttribute("id", toy.id) // Set the ID of the button
-  btn.innerText = "Like"
-  newToyCard.append(btn) // Append button to the card
+  btn.innerText = "Like" // Set inner text to "Like"
 
+  newToyCard.append(h2, img, p, btn) // Append all created elements to newToyCard
   toyContainer.append(newToyCard) // Appending the toy card to the div container
 }
-
-
-
 
 document.addEventListener("DOMContentLoaded", () => {
   const addBtn = document.querySelector("#new-toy-btn");
@@ -57,12 +51,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-
-// Access the list of toys from an API (mocked using
-// JSON Server) and render each of them in a "card"
-// on the page
-
 /*
+FIRST DELIVERABLE: Access the list of toys from an API (mocked
+using JSON Server) and render each of them in a "card" on the page
 
 - Fetch toys from the backend
 - iterate through the response and create one
@@ -80,5 +71,6 @@ document.addEventListener("DOMContentLoaded", () => {
 FIRST COMMIT: https://github.com/powercodeacademy/phase-1-challenge-toy-tale/commit/2102aa1a2f459eb942421cd2bb3372030e7fd533
 SECOND COMMIT: https://github.com/powercodeacademy/phase-1-challenge-toy-tale/commit/65ec38bc2665bb8853dce0fb12aedd3579b1b7a5
 THIRD COMMIT: https://github.com/powercodeacademy/phase-1-challenge-toy-tale/commit/d6d36eaf048dda8e6bf0ddf57693a4cb5c5a041e
+FOURTH COMMIT: https://github.com/powercodeacademy/phase-1-challenge-toy-tale/commit/32c746762c799a59232a850a72230193e3227225
 
 */
