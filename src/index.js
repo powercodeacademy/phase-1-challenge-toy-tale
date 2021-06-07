@@ -65,7 +65,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     console.log(configurationObject)
 
-    fetch("http://localhost:3000/toys", configurationObject);
+    fetch("http://localhost:3000/toys", configurationObject)
+    .then(response => response.json())
+    .then(data => {
+      addToyCard(data)
+    })
 
     // const configurationObject = {
     //   method: "POST",
@@ -118,11 +122,11 @@ and a new card showing the toy is added to the DOM
 User Fill out a form x
 THe user would click submit on the form x
 That submission would grab the information that was filled out on the form x
-We would next wrap that information into some sort of payload
+We would next wrap that information into some sort of payload x
     info about the toy (name image)
     metadata the request (headers, http verb, location/path request)
-Send that payload to the server
-Expect the server to save the new toy to its database
+Send that payload to the server x
+Expect the server to save the new toy to its database x
 server will respond with the toy object
 THe client can take that toy object and add it to the page similar to the previous toys
 
@@ -137,4 +141,5 @@ SIXTH COMMIT (TRANSITION)
 2nd Deliverable commits:
 SEVENTH COMMIT: https://github.com/powercodeacademy/phase-1-challenge-toy-tale/commit/ea9705e2476b86a2e730dfc59108ebf5902a876a
 EIGHTH COMMIT: https://github.com/powercodeacademy/phase-1-challenge-toy-tale/commit/19dc980587d788a398f7aa1c052ad65e76c0cd68
+NINTH COMMIT: https://github.com/powercodeacademy/phase-1-challenge-toy-tale/commit/4e1cdac031eaea52f4092841489b3eb8f0a71614
 */
