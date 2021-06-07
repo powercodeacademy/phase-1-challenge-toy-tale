@@ -1,8 +1,24 @@
 let addToy = false;
+let toyContainer = document.querySelector("#toy-collection") // target the element/container for each card to land
 
-const addToyCard = (toy) => {
-  console.log(toy)
+const addToyCard = (toy) => { // Add toy cards to the DOM
+
+  let newToyCard = document.createElement("div") // Create a div for the card info to land
+  newToyCard.classList.add("card") // Added "card" to the list of classes for the div
+
+  // - h2 tag with the toy.name
+  // - img tag with the src of toy.image
+  //   and the className = "toy-avatar"
+  // - p tag with toy.likes
+  // - button tag with a class "like-btn" and
+  //   an id attribute set to toy.id
+
+  newToyCard.innerHTML = toy.name // THIS IS TEMPORARY JUST TO SEE IF IT WORKS
+  toyContainer.append(newToyCard) // Appending the toy card to the div container
 }
+
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const addBtn = document.querySelector("#new-toy-btn");
@@ -46,4 +62,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 FIRST COMMIT: https://github.com/powercodeacademy/phase-1-challenge-toy-tale/commit/2102aa1a2f459eb942421cd2bb3372030e7fd533
+SECOND COMMIT: https://github.com/powercodeacademy/phase-1-challenge-toy-tale/commit/65ec38bc2665bb8853dce0fb12aedd3579b1b7a5
+
 */
