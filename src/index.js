@@ -72,5 +72,6 @@ FIRST COMMIT: https://github.com/powercodeacademy/phase-1-challenge-toy-tale/com
 SECOND COMMIT: https://github.com/powercodeacademy/phase-1-challenge-toy-tale/commit/65ec38bc2665bb8853dce0fb12aedd3579b1b7a5
 THIRD COMMIT: https://github.com/powercodeacademy/phase-1-challenge-toy-tale/commit/d6d36eaf048dda8e6bf0ddf57693a4cb5c5a041e
 FOURTH COMMIT: https://github.com/powercodeacademy/phase-1-challenge-toy-tale/commit/32c746762c799a59232a850a72230193e3227225
-
+FIFTH COMMIT: https://github.com/powercodeacademy/phase-1-challenge-toy-tale/commit/22ca92413650aa1f2a7b8a50140a9d0b4ceb2a3f
+SIXTH COMMIT (TRANSITION)
 */
