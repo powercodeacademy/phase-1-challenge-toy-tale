@@ -1,13 +1,18 @@
 let addToy = false;
 
+const addToyCard = (toy) => {
+  console.log(toy)
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   const addBtn = document.querySelector("#new-toy-btn");
   const toyFormContainer = document.querySelector(".container");
 
   fetch("http://localhost:3000/toys") // Fetch toys from the backend
-    .then(resp => resp.json())
-    .then(data => console.log(data))
+    .then(resp => resp.json()) // JSONified the response
+    .then(toys => { // Iterate over data (array of toys) to add to the DOM
+      toys.forEach(toy => addToyCard(toy)) // Call addToyCard for each toy object
+    })
 
   addBtn.addEventListener("click", () => {
     // hide & seek with the form
@@ -39,4 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
     ** add in an event listener for liking
        the toys
 
+
+FIRST COMMIT: https://github.com/powercodeacademy/phase-1-challenge-toy-tale/commit/2102aa1a2f459eb942421cd2bb3372030e7fd533
 */
