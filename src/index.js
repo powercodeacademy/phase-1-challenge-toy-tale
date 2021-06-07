@@ -40,6 +40,13 @@ document.addEventListener("DOMContentLoaded", () => {
       toys.forEach(toy => addToyCard(toy)) // Call addToyCard for each toy object
     })
 
+  // 2nd deliverable:
+  const submitNewToyButton = document.querySelector(".submit")
+  submitNewToyButton.addEventListener("click", (event) => {
+    event.preventDefault()
+    console.log("I just clicked the submit button")
+  })
+
   addBtn.addEventListener("click", () => {
     // hide & seek with the form
     addToy = !addToy;
@@ -66,6 +73,25 @@ using JSON Server) and render each of them in a "card" on the page
     an id attribute set to toy.id
     ** add in an event listener for liking
        the toys
+
+SECOND DELIVERABLE: * Use `fetch()` to make a "POST" request to create a new toy, then add it to the
+  DOM
+Hook up a form that enables users to add new toys.
+
+Create an event listener when the form is submitted,
+the new toy is persisted to the database
+and a new card showing the toy is added to the DOM
+
+User Fill out a form
+THe user would click submit on the form
+That submission would grab the information that was filled out on the form
+We would next wrap that information into some sort of payload
+    info about the toy (name image)
+    metadata the request (headers, http verb, location/path request)
+Send that payload to the server
+Expect the server to save the new toy to its database
+server will respond with the toy object
+THe client can take that toy object and add it to the page similar to the previous toys
 
 
 FIRST COMMIT: https://github.com/powercodeacademy/phase-1-challenge-toy-tale/commit/2102aa1a2f459eb942421cd2bb3372030e7fd533
