@@ -127,8 +127,8 @@ We would next wrap that information into some sort of payload x
     metadata the request (headers, http verb, location/path request)
 Send that payload to the server x
 Expect the server to save the new toy to its database x
-server will respond with the toy object
-THe client can take that toy object and add it to the page similar to the previous toys
+server will respond with the toy object x
+THe client can take that toy object and add it to the page similar to the previous toys x
 
 
 FIRST COMMIT: https://github.com/powercodeacademy/phase-1-challenge-toy-tale/commit/2102aa1a2f459eb942421cd2bb3372030e7fd533
@@ -142,4 +142,6 @@ SIXTH COMMIT (TRANSITION)
 SEVENTH COMMIT: https://github.com/powercodeacademy/phase-1-challenge-toy-tale/commit/ea9705e2476b86a2e730dfc59108ebf5902a876a
 EIGHTH COMMIT: https://github.com/powercodeacademy/phase-1-challenge-toy-tale/commit/19dc980587d788a398f7aa1c052ad65e76c0cd68
 NINTH COMMIT: https://github.com/powercodeacademy/phase-1-challenge-toy-tale/commit/4e1cdac031eaea52f4092841489b3eb8f0a71614
+Tenth COMMIT: https://github.com/powercodeacademy/phase-1-challenge-toy-tale/commit/5fa7b955b14ba87a1ac42763926ad5b66bfd86e9
+ELEVENTH COMMIT (TRANSITION)
 */
