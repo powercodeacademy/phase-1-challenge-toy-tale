@@ -44,7 +44,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const submitNewToyButton = document.querySelector(".submit")
   submitNewToyButton.addEventListener("click", (event) => {
     event.preventDefault()
+    const toyForm = document.querySelector(".add-toy-form")
+    const newToyName = toyForm.name.value
+    const newToyImage = toyForm.image.value
     console.log("I just clicked the submit button")
+    console.log(`submittedName: ${newToyName}, submittedImage: ${newToyImage}`)
   })
 
   addBtn.addEventListener("click", () => {
@@ -82,8 +86,8 @@ Create an event listener when the form is submitted,
 the new toy is persisted to the database
 and a new card showing the toy is added to the DOM
 
-User Fill out a form
-THe user would click submit on the form
+User Fill out a form x
+THe user would click submit on the form x
 That submission would grab the information that was filled out on the form
 We would next wrap that information into some sort of payload
     info about the toy (name image)
@@ -100,4 +104,7 @@ THIRD COMMIT: https://github.com/powercodeacademy/phase-1-challenge-toy-tale/com
 FOURTH COMMIT: https://github.com/powercodeacademy/phase-1-challenge-toy-tale/commit/32c746762c799a59232a850a72230193e3227225
 FIFTH COMMIT: https://github.com/powercodeacademy/phase-1-challenge-toy-tale/commit/22ca92413650aa1f2a7b8a50140a9d0b4ceb2a3f
 SIXTH COMMIT (TRANSITION)
+
+2nd Deliverable commits:
+SEVENTH COMMIT: https://github.com/powercodeacademy/phase-1-challenge-toy-tale/commit/ea9705e2476b86a2e730dfc59108ebf5902a876a
 */
