@@ -70,18 +70,6 @@ document.addEventListener("DOMContentLoaded", () => {
       .then(data => {
         addToyCard(data)
       })
-
-    // const configurationObject = {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //     "Accept": "application/json"
-    //   },
-    //   body: JSON.stringify({
-    //     dogName: "Byron",
-    //     dogBreed: "Poodle"
-    //   })
-    // };
   })
 
   addBtn.addEventListener("click", () => {
@@ -144,4 +132,6 @@ NINTH COMMIT: https://github.com/powercodeacademy/phase-1-challenge-toy-tale/com
 Tenth COMMIT: https://github.com/powercodeacademy/phase-1-challenge-toy-tale/commit/5fa7b955b14ba87a1ac42763926ad5b66bfd86e9
 ELEVENTH COMMIT (TRANSITION)
 Twelvth COMMIT (linted woo!)
+
+THIRTEENTH COMMIT (clean-up annotations, add clean working file)
 */
