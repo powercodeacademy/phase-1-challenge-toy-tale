@@ -2,47 +2,48 @@ let addToy = false
 const toyContainer = document.querySelector("#toy-collection") // target the element/container for each card to land
 
 const handleLikeToy = (event) => {
+  /*
+    When the button is clicked, the number of likes should be
+    updated in the database
+
+    Make a patch request to the database
+    - Find an example of a configurationObject to go off of
+    - Make sure the method is PATCH (used for updating)
+    - Update the body with the information we're trying to change
+      - Need the current # of likes it has (to be able to add 1)
+    - Send data to the right URL
+      - Need the ID of the toy being liked
+  */
+
   // Need the ID of the toy being liked so we can identify which toy to update
   const clickedButton = event.target
   const toyId = clickedButton.id
   const fetchUrl = `http://localhost:3000/toys/${toyId}`
-  console.log(`Toy ID: ${toyId}`)
-  console.log(`Fetch URL: ${fetchUrl}`)
 
   // Need the current # of likes it has
   // Need the new # of likes
-  const infoAboutCurrentLikes = clickedButton.previousSibling
-  const previousLikes = parseInt(infoAboutCurrentLikes.innerText)
+  const paragraphWithLikes = clickedButton.previousSibling
+  const previousLikes = parseInt(paragraphWithLikes.innerText)
   const newLikes = previousLikes + 1
-  console.log(`New likes: ${newLikes}`)
 
-  /*
-  When the button is clicked, the number of likes should be
-  updated in the database
 
-  Make a patch request to the database
-  - Find an example of a configurationObject to go off of
-  - Make sure the method is PATCH (used for updating)
-  - Update the body with the information we're trying to change
-    - Need the current # of likes it has (to be able to add 1)
-  - Send data to the right URL
-    - Need the ID of the toy being liked
-*/
+  const configurationObject = {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json"
+    },
+    body: JSON.stringify({
+      likes: newLikes
+    })
+  }
 
-const configurationObject = {
-  method: "PATCH",
-  headers: {
-    "Content-Type": "application/json",
-    Accept: "application/json"
-  },
-  body: JSON.stringify({
-    likes: newLikes
-  })
-}
-
-fetch(fetchUrl, configurationObject)
-
-//   - the updated information should be rendered to the DOM
+  fetch(fetchUrl, configurationObject)
+    .then(res => res.json())
+    .then(data => {
+      // the updated information should be rendered to the DOM
+      paragraphWithLikes.innerText = `${data.likes} likes`
+    })
 }
 
 const addToyCard = (toy) => { // Add toy cards to the DOM
