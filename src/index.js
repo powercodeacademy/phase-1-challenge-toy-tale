@@ -1,6 +1,13 @@
 let addToy = false
 const toyContainer = document.querySelector("#toy-collection") // target the element/container for each card to land
 
+const handleLikeToy = (event) => {
+  console.log(event)
+//   When the button is clicked, the number of likes should be
+//   updated in the database
+//   - the updated information should be rendered to the DOM
+}
+
 const addToyCard = (toy) => { // Add toy cards to the DOM
   const newToyCard = document.createElement("div") // Create a div for the card info to land
   newToyCard.classList.add("card") // Added "card" to the list of classes for the div
@@ -25,6 +32,7 @@ const addToyCard = (toy) => { // Add toy cards to the DOM
   btn.classList.add("like-btn") // Set the class to "like-btn"
   btn.setAttribute("id", toy.id) // Set the ID of the button
   btn.innerText = "Like" // Set inner text to "Like"
+  btn.addEventListener("click", (event) => handleLikeToy(event))
 
   newToyCard.append(h2, img, p, btn) // Append all created elements to newToyCard
   toyContainer.append(newToyCard) // Appending the toy card to the div container
@@ -99,6 +107,14 @@ using JSON Server) and render each of them in a "card" on the page
     ** add in an event listener for liking
        the toys
 
+FIRST COMMIT: https://github.com/powercodeacademy/phase-1-challenge-toy-tale/commit/2102aa1a2f459eb942421cd2bb3372030e7fd533
+SECOND COMMIT: https://github.com/powercodeacademy/phase-1-challenge-toy-tale/commit/65ec38bc2665bb8853dce0fb12aedd3579b1b7a5
+THIRD COMMIT: https://github.com/powercodeacademy/phase-1-challenge-toy-tale/commit/d6d36eaf048dda8e6bf0ddf57693a4cb5c5a041e
+FOURTH COMMIT: https://github.com/powercodeacademy/phase-1-challenge-toy-tale/commit/32c746762c799a59232a850a72230193e3227225
+FIFTH COMMIT: https://github.com/powercodeacademy/phase-1-challenge-toy-tale/commit/22ca92413650aa1f2a7b8a50140a9d0b4ceb2a3f
+SIXTH COMMIT (TRANSITION)
+
+
 SECOND DELIVERABLE: * Use `fetch()` to make a "POST" request to create a new toy, then add it to the
   DOM
 Hook up a form that enables users to add new toys.
@@ -118,13 +134,6 @@ Expect the server to save the new toy to its database x
 server will respond with the toy object x
 THe client can take that toy object and add it to the page similar to the previous toys x
 
-FIRST COMMIT: https://github.com/powercodeacademy/phase-1-challenge-toy-tale/commit/2102aa1a2f459eb942421cd2bb3372030e7fd533
-SECOND COMMIT: https://github.com/powercodeacademy/phase-1-challenge-toy-tale/commit/65ec38bc2665bb8853dce0fb12aedd3579b1b7a5
-THIRD COMMIT: https://github.com/powercodeacademy/phase-1-challenge-toy-tale/commit/d6d36eaf048dda8e6bf0ddf57693a4cb5c5a041e
-FOURTH COMMIT: https://github.com/powercodeacademy/phase-1-challenge-toy-tale/commit/32c746762c799a59232a850a72230193e3227225
-FIFTH COMMIT: https://github.com/powercodeacademy/phase-1-challenge-toy-tale/commit/22ca92413650aa1f2a7b8a50140a9d0b4ceb2a3f
-SIXTH COMMIT (TRANSITION)
-
 2nd Deliverable commits:
 SEVENTH COMMIT: https://github.com/powercodeacademy/phase-1-challenge-toy-tale/commit/ea9705e2476b86a2e730dfc59108ebf5902a876a
 EIGHTH COMMIT: https://github.com/powercodeacademy/phase-1-challenge-toy-tale/commit/19dc980587d788a398f7aa1c052ad65e76c0cd68
@@ -134,4 +143,43 @@ ELEVENTH COMMIT (TRANSITION)
 Twelvth COMMIT (linted woo!)
 
 THIRTEENTH COMMIT (clean-up annotations, add clean working file)
+
+
+THIRD DELIVERABLE
+- Create an event listener that gives users the ability to click a button to
+"like" a toy.
+  - Attach an event listener to every button
+  - When a new button (new toy/card) is added, also attach an event listener to that
+- When the button is clicked, the number of likes should be
+updated in the database
+- the updated information should be rendered to the DOM
+
+
 */
+
+
+
+// {
+//   "name": "Sporky",
+//   "image": "sporky.jpg",
+//   "likes": 0,
+//   "id": 9
+// },
+// {
+//   "name": "Forky",
+//   "image": "https://upload.wikimedia.org/wikipedia/en/thumb/6/6e/Forky_waving.png/220px-Forky_waving.png",
+//   "likes": 0,
+//   "id": 10
+// },
+// {
+//   "name": "Zurg",
+//   "image": "https://static.wikia.nocookie.net/pixar/images/8/86/FE111586-19EE-447D-8902-9DD1745A2257.png/revision/latest?cb=20181126205610",
+//   "likes": 0,
+//   "id": 11
+// },
+// {
+//   "name": "Mrs. Potato Head",
+//   "image": "https://static.wikia.nocookie.net/pixar/images/a/a7/BEST_MRS.POTATO_HEAD_EVER.png/revision/latest/top-crop/width/360/height/360?cb=20210210225058",
+//   "likes": 0,
+//   "id": 12
+// }
