@@ -2,9 +2,46 @@ let addToy = false
 const toyContainer = document.querySelector("#toy-collection") // target the element/container for each card to land
 
 const handleLikeToy = (event) => {
-  console.log(event)
-//   When the button is clicked, the number of likes should be
-//   updated in the database
+  // Need the ID of the toy being liked so we can identify which toy to update
+  const clickedButton = event.target
+  const toyId = clickedButton.id
+  const fetchUrl = `http://localhost:3000/toys/${toyId}`
+  console.log(`Toy ID: ${toyId}`)
+  console.log(`Fetch URL: ${fetchUrl}`)
+
+  // Need the current # of likes it has
+  // Need the new # of likes
+  const infoAboutCurrentLikes = clickedButton.previousSibling
+  const previousLikes = parseInt(infoAboutCurrentLikes.innerText)
+  const newLikes = previousLikes + 1
+  console.log(`New likes: ${newLikes}`)
+
+  /*
+  When the button is clicked, the number of likes should be
+  updated in the database
+
+  Make a patch request to the database
+  - Find an example of a configurationObject to go off of
+  - Make sure the method is PATCH (used for updating)
+  - Update the body with the information we're trying to change
+    - Need the current # of likes it has (to be able to add 1)
+  - Send data to the right URL
+    - Need the ID of the toy being liked
+*/
+
+const configurationObject = {
+  method: "PATCH",
+  headers: {
+    "Content-Type": "application/json",
+    Accept: "application/json"
+  },
+  body: JSON.stringify({
+    likes: newLikes
+  })
+}
+
+fetch(fetchUrl, configurationObject)
+
 //   - the updated information should be rendered to the DOM
 }
 
@@ -32,7 +69,7 @@ const addToyCard = (toy) => { // Add toy cards to the DOM
   btn.classList.add("like-btn") // Set the class to "like-btn"
   btn.setAttribute("id", toy.id) // Set the ID of the button
   btn.innerText = "Like" // Set inner text to "Like"
-  btn.addEventListener("click", (event) => handleLikeToy(event))
+  btn.addEventListener("click", (event) => handleLikeToy(event)) // Add event listener to deal with folks clicking the "Like" button
 
   newToyCard.append(h2, img, p, btn) // Append all created elements to newToyCard
   toyContainer.append(newToyCard) // Appending the toy card to the div container
